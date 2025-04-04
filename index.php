@@ -2,7 +2,14 @@
 include("conexion.php");
 $resultado = $conexion->query("SELECT * FROM usuarios");
 ?>
-
+// Validación de formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["nombre"])) {
+        echo "El nombre es obligatorio.";
+    } else {
+        echo "Nombre válido: " . htmlspecialchars($_POST["nombre"]);
+    }
+}
 <!DOCTYPE html>
 <html lang="es">
 <head>
