@@ -1,7 +1,5 @@
 <?php
 include("conexion.php");
-$resultado = $conexion->query("SELECT * FROM usuarios");
-?>
 // Validación de formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["nombre"])) {
@@ -10,6 +8,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Nombre válido: " . htmlspecialchars($_POST["nombre"]);
     }
 }
+$resultado = $conexion->query("SELECT * FROM usuarios");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
